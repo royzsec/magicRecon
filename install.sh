@@ -15,17 +15,6 @@ sudo apt-get install -y python3-pip
 sudo apt-get install -y python-pip
 sudo apt-get install -y dnspython
 
-printf "${CYAN}Installing GO\n\n${NORMAL}"
-sudo apt install -y golang
-export GOROOT=/usr/lib/go
-export GOPATH=~/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
-echo "export GOROOT=/usr/lib/go" >> ~/.bashrc
-echo "export GOPATH=~/go" >> ~/.bashrc
-echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> ~/.bashrc
-
-source ~/.bashrc
 
 printf "${CYAN}Installing Cargo\n\n${NORMAL}"
 sudo apt install cargo
@@ -138,35 +127,32 @@ printf "${CYAN}Installing SqlMap\n\n${NORMAL}"
 sudo apt-get install sqlmap 
 
 printf "${CYAN}Installing Amass\n${NORMAL}"
-go get -v github.com/OWASP/Amass/v3/..
+go install github.com/OWASP/Amass/v3@latest
 sudo cp ~/go/bin/amass /usr/local/bin 
 
 printf "${CYAN}Installing Aquatone\n${NORMAL}"
-go get -u github.com/michenriksen/aquatone
+go install github.com/michenriksen/aquatone@latest
 sudo cp ~/go/bin/aquatone /usr/local/bin 
 
-printf "${CYAN}Installing Subfinder\n${NORMAL}"
-GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
-sudo cp ~/go/bin/subfinder /usr/local/bin 
 
 printf "${CYAN}Installing Hakrawler\n${NORMAL}"
 go install github.com/hakluke/hakrawler@latest
 sudo cp ~/go/bin/hakrawler /usr/local/bin 
 
 printf "${CYAN}Installing anew\n${NORMAL}"
-go get -u github.com/tomnomnom/anew
+go install github.com/tomnomnom/anew@latest
 sudo cp ~/go/bin/anew /usr/local/bin 
 
 printf "${CYAN}Installing HTTPX\n${NORMAL}"
-GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
+GO111MODULE=on go install github.com/projectdiscovery/httpx/cmd/httpx@latest
 sudo cp ~/go/bin/httpx /usr/local/bin
 
 printf "${CYAN}Installing Notify\n${NORMAL}"
-GO111MODULE=on go get -v github.com/projectdiscovery/notify/cmd/notify
+GO111MODULE=on go install github.com/projectdiscovery/notify/cmd/notify@latest
 sudo cp ~/go/bin/notify /usr/local/bin
 
 printf "${CYAN}Installing Nuclei\n${NORMAL}"
-GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+GO111MODULE=on go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 sudo cp ~/go/bin/nuclei /usr/local/bin
 
 printf "${CYAN}Installing Shcheck\n${NORMAL}"
@@ -176,30 +162,30 @@ printf "${CYAN}Installing MailSpoof\n${NORMAL}"
 sudo pip3 install mailspoof
 
 printf "${CYAN}Installing MailSpoof\n${NORMAL}"
-go get github.com/haccer/subjack
+go install github.com/haccer/subjack@latest
 sudo cp ~/go/bin/subjack /usr/local/bin
 
 printf "${CYAN}Installing gau\n${NORMAL}"
-GO111MODULE=on go get -u -v github.com/lc/gau
+GO111MODULE=on go install github.com/lc/gau@latest
 sudo cp ~/go/bin/gau /usr/local/bin
 
 printf "${CYAN}Installing gf\n${NORMAL}"
-go get -u github.com/tomnomnom/gf
+go install github.com/tomnomnom/gf@latest
 echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 sudo cp ~/go/bin/gf /usr/local/bin
 
 printf "${CYAN}Installing qsreplace\n${NORMAL}"
-go get -u github.com/tomnomnom/qsreplace
+go install github.com/tomnomnom/qsreplace@latest
 sudo cp ~/go/bin/qsreplace /usr/local/bin
 
 printf "${CYAN}Installing Dalfox\n${NORMAL}"
-GO111MODULE=on go get -v github.com/hahwul/dalfox/v2
+GO111MODULE=on go install github.com/hahwul/dalfox/v2@latest
 sudo cp ~/go/bin/dalfox /usr/local/bin
 
 printf "${CYAN}Installing html-tool\n${NORMAL}"
-go get -u github.com/tomnomnom/hacks/html-tool
+go install github.com/tomnomnom/hacks/html-tool@latest
 sudo cp ~/go/bin/html-tool /usr/local/bin
 
 printf "${CYAN}Installing waybackurls\n${NORMAL}"
-go get github.com/tomnomnom/waybackurls
+go install github.com/tomnomnom/waybackurls@latest
